@@ -1,0 +1,37 @@
+.item {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > div {
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+  /*demo*/
+  box-shadow: 0 0 0 1px black;
+  margin-bottom: 10px;
+}
+.btnSubmit {
+  width: 260px;
+  background-color: darkgray;
+  height: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 28px;
+  color: chartreuse;
+}
+.btnSubmit:hover {
+  background-color: greenyellow;
+  color: black;
+}
+.btnCnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px;
+}

@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./styles.css";
+import React, { createContext, useState } from "react";
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import Home from "./pages/Home";
+import Layout from "./pages/Layout";
+import Nopage from "./pages/Nopage";
+import Puzzle from "./pages/Puzzle";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./Style.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="signup" element={<SignUp />} />
+            <Route path="login" element={<Login />} />
+            <Route path="puzzle" element={<Puzzle />} />
+            <Route path="*" element={<Nopage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
