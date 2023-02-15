@@ -59,6 +59,7 @@ export default function SignInSide() {
       })
       .then(function (response) {
         if ((response["status"] = "success")) {
+          console.log(response);
           localStorage.setItem("token", response["token"]);
           navigate("/puzzle");
         }
